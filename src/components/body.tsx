@@ -10,7 +10,7 @@ import f2 from '../assets/f2.png';
 import t1 from '../assets/t1.png';
 import m1 from '../assets/m1.png';
 import h1 from '../assets/h1.png';
-
+import c1 from '../assets/c1.png';
 
 const carData = [
   {
@@ -25,9 +25,9 @@ const carData = [
     name: 'Tesla',
     image: t1, // Updated image variable name
     passengers: 5,
-    fuel: 'Gasoline',
-    type: 'SUV',
-    price: '₹200',
+    fuel: 'Electric',
+    type: 'Sedan',
+    price: '₹250',
   },
   {
     name: 'Ferrari Enzo',
@@ -49,17 +49,17 @@ const carData = [
     name: 'Maruti',
     image: m1, // Updated image variable name
     passengers: 5,
-    fuel: 'Gasoline',
-    type: 'SUV',
-    price: '₹200',
+    fuel: 'Petrol',
+    type: 'Hatchback',
+    price: '₹220',
   },
   {
     name: 'Honda',
     image: h1, // Updated image variable name
     passengers: 5,
-    fuel: 'Gasoline',
-    type: 'SUV',
-    price: '₹200',
+    fuel: 'Diesel',
+    type: 'Sedan',
+    price: '₹180',
   }
 ];
 
@@ -82,7 +82,7 @@ const CarCard = ({ car }) => (
         Daily rate from {car.price}
       </Typography>
     </CardContent>
-    <Button variant="contained" color="primary" fullWidth>
+    <Button variant="contained" color="primary" sx={{ width: '340px' }}>
       Book Now
     </Button>
   </Card>
