@@ -17,7 +17,7 @@ import n2 from '../assets/n2.png';
 const carData = [
   {
     name: 'Jeep XD',
-    image: j1, // Updated image variable name
+    image: j1, 
     passengers: 5,
     fuel: 'Gasoline',
     type: 'SUV',
@@ -25,7 +25,7 @@ const carData = [
   },
   {
     name: 'Tesla',
-    image: t1, // Updated image variable name
+    image: t1, 
     passengers: 5,
     fuel: 'Electric',
     type: 'Sedan',
@@ -33,7 +33,7 @@ const carData = [
   },
   {
     name: 'Ferrari Enzo',
-    image: f2, // Updated image variable name
+    image: f2, 
     passengers: 2,
     fuel: 'Electric',
     type: 'Sedan',
@@ -41,7 +41,7 @@ const carData = [
   },
   {
     name: 'Creata',
-    image: c1, // Updated image variable name
+    image: c1, 
     passengers: 4,
     fuel: 'Gasoline',
     type: 'Mini coupe',
@@ -49,7 +49,7 @@ const carData = [
   },
   {
     name: 'Maruti',
-    image: m1, // Updated image variable name
+    image: m1, 
     passengers: 5,
     fuel: 'Petrol',
     type: 'Hatchback',
