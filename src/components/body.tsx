@@ -11,6 +11,8 @@ import t1 from '../assets/t1.png';
 import m1 from '../assets/m1.png';
 import h1 from '../assets/h1.png';
 import c1 from '../assets/c1.png';
+import h5 from '../assets/h5.png';
+import n2 from '../assets/n2.png';
 
 const carData = [
   {
@@ -19,7 +21,7 @@ const carData = [
     passengers: 5,
     fuel: 'Gasoline',
     type: 'SUV',
-    price: '₹200',
+    price: '₹260',
   },
   {
     name: 'Tesla',
@@ -55,20 +57,36 @@ const carData = [
   },
   {
     name: 'Honda',
-    image: h1, // Updated image variable name
+    image: h1, 
     passengers: 5,
     fuel: 'Diesel',
     type: 'Sedan',
     price: '₹180',
+  },
+  {
+    name: 'Hector',
+    image: h5, 
+    passengers: 7,
+    fuel: 'Hybrid',
+    type: 'SUV',
+    price: '₹210',
+  },
+  {
+    name: 'Nexon',
+    image: n2, 
+    passengers: 5,
+    fuel: 'Hybrid',
+    type: 'SUV',
+    price: '₹240',
   }
 ];
 
 const CarCard = ({ car }) => (
-  <Card sx={{ maxWidth: 345, m: 2 }}>
+  <Card sx={{ maxWidth: 310, m: 2 }}>
     <CardMedia
       component="img"
       height="300"
-      image={car.image} // Use the updated image variable
+      image={car.image} 
       alt={car.name}
     />
     <CardContent>
@@ -91,7 +109,7 @@ const CarCard = ({ car }) => (
 const CarList = () => (
   <Grid container spacing={2}>
     {carData.map((car, index) => (
-      <Grid item xs={12} sm={6} md={4} key={index}>
+      <Grid item xs={10} sm={5} md={3} key={index}>
         <CarCard car={car} />
       </Grid>
     ))}
