@@ -15,7 +15,11 @@ import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SettingsIcon from "@mui/icons-material/Settings";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 import logo from "../assets/logo.png";
+import car1 from "../assets/classccar.png";
+import car2 from "../assets/simplecar.png";
 
 const drawerWidth = 240;
 const navItems = ["Booking", "Cars", "Contact"];
@@ -46,8 +50,23 @@ export default function Header() {
     </Box>
   );
 
+  const cards = [
+    {
+      title: "The Premier Choice Car Rental",
+      subheading:
+        "The future of stunning portraits features over 300 models of diverse ages and ethnicities.",
+      image: car1,
+    },
+    {
+      title: "Low Cost Rental Made Quick And Simple",
+      subheading:
+        "The future of stunning portraits features over 300 models of diverse ages and ethnicities.",
+      image: car2,
+    },
+  ];
+
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", flexDirection: "column" }}>
       <AppBar
         component="nav"
         sx={{
@@ -58,7 +77,6 @@ export default function Header() {
         }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          {/* Left Section: Logo and Title */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <IconButton
               edge="start"
@@ -87,7 +105,6 @@ export default function Header() {
             </Typography>
           </Box>
 
-          {/* Right Section: Search Bar, Nav Items, Icons */}
           <Box
             sx={{
               display: { xs: "none", sm: "flex" },
@@ -95,17 +112,16 @@ export default function Header() {
               gap: 2,
             }}
           >
-            {/* Search Bar */}
             <Box
               sx={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: "#FFFFFF", // Set background color to white
+                backgroundColor: "#FFFFFF",
                 borderRadius: "4px",
                 padding: "0 8px",
                 height: "2rem",
                 width: "11rem",
-                border: "1px solid #DDE2E4", // Set border color
+                border: "1px solid #DDE2E4",
               }}
             >
               <SearchIcon sx={{ color: "#b0b0b0" }} />
@@ -118,24 +134,23 @@ export default function Header() {
                   fontSize: "0.9rem",
                   color: "#000",
                   "&::placeholder": {
-                    color: "#9AA6AC", // Set placeholder color
+                    color: "#9AA6AC",
                   },
                 }}
               />
             </Box>
 
-            {/* Navigation Items without Background Color */}
             {navItems.map((item) => (
               <Button
                 key={item}
                 sx={{
-                  color: "#141414", // Set text color to #141414
+                  color: "#141414",
                   fontFamily: "Poppins",
                   fontWeight: 500,
                   textTransform: "none",
-                  padding: "0.5rem 1.2rem", // Adjust padding for better alignment
+                  padding: "0.5rem 1.2rem",
                   "&:hover": {
-                    backgroundColor: "transparent", // Remove background on hover
+                    backgroundColor: "transparent",
                   },
                 }}
               >
@@ -143,25 +158,19 @@ export default function Header() {
               </Button>
             ))}
 
-            {/* Last Three Components: Bell Icon, Settings Icon, Profile Pic */}
             <Box
               sx={{
                 display: "flex",
                 alignItems: "center",
-                gap: 1, // Slightly reduced gap for the icons to appear closer
+                gap: 1,
               }}
             >
-              {/* Bell Icon */}
               <IconButton aria-label="notifications" sx={{ color: "#000" }}>
                 <NotificationsIcon />
               </IconButton>
-
-              {/* Settings Icon */}
               <IconButton aria-label="settings" sx={{ color: "#000" }}>
                 <SettingsIcon />
               </IconButton>
-
-              {/* Profile Image */}
               <Box
                 sx={{
                   height: "2.5rem",
@@ -197,6 +206,99 @@ export default function Header() {
       >
         {drawer}
       </Drawer>
+
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          justifyContent: "space-around", // Adjust gap to make cards fit better
+          gap: 2, // Reduce gap to maximize card width
+          mt: "6rem",
+          p: 2,
+        }}
+      >
+        {cards.map((card, index) => (
+          <Card
+            key={index}
+            sx={{
+              width: "48%", // Adjust width to fit two cards side by side
+              height: "400px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              backgroundColor: "#141414",
+              color: "#fff",
+              borderRadius: "16px",
+              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+              overflow: "hidden",
+            }}
+          >
+            <CardContent
+              sx={{
+                flex: "1",
+                padding: "1.5rem",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                gap: "1rem",
+              }}
+            >
+              <Box sx={{ flex: "1" }}>
+                <Typography
+                  variant="h5"
+                  component="div"
+                  sx={{
+                    fontWeight: "700",
+                    fontSize: "1.8rem",
+                    textAlign: "left",
+                  }}
+                >
+                  {card.title}
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  sx={{
+                    fontSize: "1rem",
+                    color: "#B0BEC5",
+                    marginTop: "0.5rem",
+                    textAlign: "left",
+                  }}
+                >
+                  {card.subheading}
+                </Typography>
+              </Box>
+              <Button
+                sx={{
+                  alignSelf: "flex-start",
+                  marginTop: "1rem",
+                  width: "150px",
+                  backgroundColor: "#000",
+                  color: "#fff",
+                  textTransform: "capitalize",
+                  borderRadius: "8px",
+                  fontWeight: 600,
+                  "&:hover": {
+                    backgroundColor: "#333",
+                  },
+                }}
+              >
+                Rental Car
+              </Button>
+            </CardContent>
+            <Box
+              component="img"
+              src={card.image}
+              alt={card.title}
+              sx={{
+                height: "200px",
+                width: "100%",
+                objectFit: "cover",
+                padding: ""
+              }}
+            />
+          </Card>
+        ))}
+      </Box>
     </Box>
   );
 }
