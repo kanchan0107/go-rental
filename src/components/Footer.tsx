@@ -49,7 +49,14 @@ const styles = {
     padding: "40px 20px",
   },
   title: {
-    fontSize: "28px",
+    fontFamily: "Montserrat, sans-serif",
+    fontSize: "60px",
+    fontWeight: 600,
+    lineHeight: "72px",
+    letterSpacing: "-0.02em",
+    textAlign: "center",
+    textUnderlinePosition: "from-font",
+    textDecorationSkipInk: "none",
     margin: "0 0 10px",
   },
   description: {
@@ -89,7 +96,7 @@ const styles = {
     cursor: "pointer",
     color: "#fff",
   },
-  footerBottom: {
+  footerBottom: { 
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
